@@ -36,16 +36,19 @@
   </template> -->
 
   <!-- <Methods /> -->
-  <EventHandling />
+  <!-- <EventHandling /> -->
+  <FormHandling />
 </template>
 
 <script>
 import Methods from "./components/Methods.vue";
 import EventHandling from "./components/EventHandling.vue";
+import FormHandling from "./components/FormHandling.vue";
 export default {
   components: {
     Methods,
     EventHandling,
+    FormHandling,
   },
   data() {
     return {
