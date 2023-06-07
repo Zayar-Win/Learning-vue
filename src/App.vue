@@ -26,6 +26,8 @@
     <h1>Hello world</h1>
     <h1>My name is Zayarwin</h1>
   </template>
+
+  <p v-show="show">I am using v-show</p>
 </template>
 
 <script>
@@ -42,6 +44,7 @@ export default {
       isMale: true,
       num: "hello",
       display: false,
+      show: true,
     };
   },
 };
