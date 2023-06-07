@@ -39,6 +39,10 @@
     {{ actor.name }}
     <p v-for="movie in actor.movies" :key="movie">{{ movie }}</p>
   </h4>
+
+  <template v-for="name in names" :key="name">
+    <h1 v-if="name === 'Burce'">{{ name }}</h1>
+  </template>
 </template>
 
 <script>
