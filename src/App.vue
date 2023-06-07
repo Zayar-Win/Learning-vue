@@ -16,6 +16,16 @@
   >
     My Name is Zayarwin
   </h1>
+
+  <p v-if="num === 0">This number is zero.</p>
+  <p v-else-if="num < 0">This is negative number.</p>
+  <p v-else-if="num > 0">This is positive number.</p>
+  <p v-else>This is not a number</p>
+
+  <template v-if="display">
+    <h1>Hello world</h1>
+    <h1>My name is Zayarwin</h1>
+  </template>
 </template>
 
 <script>
@@ -30,6 +40,8 @@ export default {
       name: "zayarwin",
       isNew: true,
       isMale: true,
+      num: "hello",
+      display: false,
     };
   },
 };
