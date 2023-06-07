@@ -43,14 +43,18 @@
   <template v-for="name in names" :key="name">
     <h1 v-if="name === 'Burce'">{{ name }}</h1>
   </template>
+
+  <Methods />
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Methods from "./components/Methods.vue";
 
 export default {
   components: {
     HelloWorld,
+    Methods,
   },
   data() {
     return {
