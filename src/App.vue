@@ -28,6 +28,17 @@
   </template>
 
   <p v-show="show">I am using v-show</p>
+
+  <p v-for="name in names" :key="name">{{ name }}</p>
+
+  <p v-for="name in fullNames" :key="name.first">
+    {{ name.first }} {{ name.last }}
+  </p>
+
+  <h4 v-for="actor in actors" :key="actor.name">
+    {{ actor.name }}
+    <p v-for="movie in actor.movies" :key="movie">{{ movie }}</p>
+  </h4>
 </template>
 
 <script>
@@ -45,6 +56,31 @@ export default {
       num: "hello",
       display: false,
       show: true,
+      names: ["Burce", "Clark", "Diana"],
+      fullNames: [
+        {
+          first: "Bruce",
+          last: "Wayne",
+        },
+        {
+          first: "Clark",
+          last: "Kent",
+        },
+        {
+          first: "Princess",
+          last: "Diana",
+        },
+      ],
+      actors: [
+        {
+          name: "Christian Bale",
+          movies: ["Batman", "The Prestige"],
+        },
+        {
+          name: "Di Caprio",
+          movies: ["Titanic", "Inception"],
+        },
+      ],
     };
   },
 };
