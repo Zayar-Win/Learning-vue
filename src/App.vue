@@ -38,7 +38,8 @@
   <!-- <Methods /> -->
   <!-- <EventHandling /> -->
   <!-- <FormHandling /> -->
-  <ComputedProperty />
+  <!-- <ComputedProperty /> -->
+  <Watchers />
 </template>
 
 <script>
@@ -46,12 +47,14 @@ import Methods from "./components/Methods.vue";
 import EventHandling from "./components/EventHandling.vue";
 import FormHandling from "./components/FormHandling.vue";
 import ComputedProperty from "./components/ComputedProperty.vue";
+import Watchers from "./components/Watchers.vue";
 export default {
   components: {
     Methods,
     EventHandling,
     FormHandling,
     ComputedProperty,
+    Watchers,
   },
   data() {
     return {
