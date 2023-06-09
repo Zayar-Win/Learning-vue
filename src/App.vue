@@ -47,8 +47,10 @@
     :isPublished="true"
   /> -->
   <!-- <ProvideInject /> -->
-  <Event @close="closePopup" v-if="open" />
-  <button @click="open = true">Open Popup</button>
+  <!-- <Event @close="closePopup" v-if="open" /> -->
+  <!-- <button @click="open = true">Open Popup</button> -->
+  <Input v-model="name" />
+  {{ name }}
 </template>
 
 <script>
@@ -60,6 +62,7 @@ import Watchers from "./components/Watchers.vue";
 import Article from "./components/Article.vue";
 import ProvideInject from "./components/ProvideInject.vue";
 import Event from "./components/Event.vue";
+import Input from "./components/Input.vue";
 export default {
   components: {
     Methods,
@@ -70,6 +73,7 @@ export default {
     Article,
     ProvideInject,
     Event,
+    Input,
   },
   data() {
     return {
