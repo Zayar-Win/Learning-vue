@@ -40,12 +40,13 @@
   <!-- <FormHandling /> -->
   <!-- <ComputedProperty /> -->
   <!-- <Watchers /> -->
-  <Article
+  <!-- <Article
     id="article"
     title="This is blog title"
     :likes="100"
     :isPublished="true"
-  />
+  /> -->
+  <ProvideInject />
 </template>
 
 <script>
@@ -55,6 +56,7 @@ import FormHandling from "./components/FormHandling.vue";
 import ComputedProperty from "./components/ComputedProperty.vue";
 import Watchers from "./components/Watchers.vue";
 import Article from "./components/Article.vue";
+import ProvideInject from "./components/ProvideInject.vue";
 export default {
   components: {
     Methods,
@@ -63,6 +65,7 @@ export default {
     ComputedProperty,
     Watchers,
     Article,
+    ProvideInject,
   },
   data() {
     return {
@@ -97,6 +100,11 @@ export default {
           movies: ["Titanic", "Inception"],
         },
       ],
+    };
+  },
+  provide() {
+    return {
+      username: this.name,
     };
   },
 };
