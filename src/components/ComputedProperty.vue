@@ -1,7 +1,7 @@
 <template>
   <p>My FullName is {{ firstName }} {{ lastName }}</p>
   <p>My FullName using computed property is {{ fullName }}</p>
-
+  <button @click="changeFullName('a win')">Change name</button>
   <p>
     The total price of my desk setup is
     {{ items.reduce((prev, curr) => prev + curr.price, 0) }}
@@ -60,10 +60,20 @@ export default {
       console.log("run getTotalPrice method");
       return this.items.reduce((prev, curr) => prev + curr.price, 0);
     },
+    changeFullName(name) {
+      this.fullName = name;
+    },
   },
   computed: {
-    fullName() {
-      return `${this.firstName} ${this.lastName}`;
+    fullName: {
+      get() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+      set(value) {
+        let names = value.split(" ");
+        this.firstName = names[0];
+        this.lastName = names[1];
+      },
     },
     totalPrice() {
       console.log("run totalPrice computed method");
