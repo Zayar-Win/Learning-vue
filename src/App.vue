@@ -37,18 +37,21 @@
 
   <!-- <Methods /> -->
   <!-- <EventHandling /> -->
-  <FormHandling />
+  <!-- <FormHandling /> -->
+  <ComputedProperty />
 </template>
 
 <script>
 import Methods from "./components/Methods.vue";
 import EventHandling from "./components/EventHandling.vue";
 import FormHandling from "./components/FormHandling.vue";
+import ComputedProperty from "./components/ComputedProperty.vue";
 export default {
   components: {
     Methods,
     EventHandling,
     FormHandling,
+    ComputedProperty,
   },
   data() {
     return {

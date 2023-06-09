@@ -2,15 +2,18 @@
   <pre>
     {{ JSON.stringify(formData, null, 2) }}
   </pre>
-  <form @submit="submit">
+  <!-- using prevent modifier -->
+  <form @submit.prevent="submit">
     <div>
       <label for="name">Name</label>
-      <input type="text" name="" id="name" v-model="formData.name" />
+      <!-- using lazy modifier this will update data when user navigate another -->
+      <input type="text" name="" id="name" v-model.lazy="formData.name" />
     </div>
     <div>
       <label for="profile-summary">Profile Summary</label>
+      <!-- using space trim modifier -->
       <textarea
-        v-model="formData.profileSummary"
+        v-model.trim="formData.profileSummary"
         name=""
         id="profile-summary"
         cols="30"
