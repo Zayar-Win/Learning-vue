@@ -39,7 +39,13 @@
   <!-- <EventHandling /> -->
   <!-- <FormHandling /> -->
   <!-- <ComputedProperty /> -->
-  <Watchers />
+  <!-- <Watchers /> -->
+  <Article
+    id="article"
+    title="This is blog title"
+    :likes="100"
+    :isPublished="true"
+  />
 </template>
 
 <script>
@@ -48,6 +54,7 @@ import EventHandling from "./components/EventHandling.vue";
 import FormHandling from "./components/FormHandling.vue";
 import ComputedProperty from "./components/ComputedProperty.vue";
 import Watchers from "./components/Watchers.vue";
+import Article from "./components/Article.vue";
 export default {
   components: {
     Methods,
@@ -55,6 +62,7 @@ export default {
     FormHandling,
     ComputedProperty,
     Watchers,
+    Article,
   },
   data() {
     return {
