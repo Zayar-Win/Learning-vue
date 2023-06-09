@@ -7,8 +7,12 @@
     {{ items.reduce((prev, curr) => prev + curr.price, 0) }}
   </p>
   <p>
-    My total price of my desk setup using computed properth is {{ totalPrice }}
+    My total price of my desk setup using computed property is {{ totalPrice }}
   </p>
+  <!-- if we use method instead of computed property when component rerender computed property use cached value instead of recalculating.
+  but method recalcalated  -->
+  <p>My total price of my desk setup using method is {{ getTotalPrice() }}</p>
+  <input type="text" v-model="text" />
   <button
     @click="
       items.push({
@@ -29,6 +33,7 @@
 export default {
   data() {
     return {
+      text: "",
       firstName: "Zayar",
       lastName: "Win",
       items: [
@@ -50,11 +55,18 @@ export default {
       ],
     };
   },
+  methods: {
+    getTotalPrice() {
+      console.log("run getTotalPrice method");
+      return this.items.reduce((prev, curr) => prev + curr.price, 0);
+    },
+  },
   computed: {
     fullName() {
       return `${this.firstName} ${this.lastName}`;
     },
     totalPrice() {
+      console.log("run totalPrice computed method");
       return this.items.reduce((prev, curr) => prev + curr.price, 0);
     },
   },
