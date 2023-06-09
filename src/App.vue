@@ -46,7 +46,9 @@
     :likes="100"
     :isPublished="true"
   /> -->
-  <ProvideInject />
+  <!-- <ProvideInject /> -->
+  <Event @close="closePopup" v-if="open" />
+  <button @click="open = true">Open Popup</button>
 </template>
 
 <script>
@@ -57,6 +59,7 @@ import ComputedProperty from "./components/ComputedProperty.vue";
 import Watchers from "./components/Watchers.vue";
 import Article from "./components/Article.vue";
 import ProvideInject from "./components/ProvideInject.vue";
+import Event from "./components/Event.vue";
 export default {
   components: {
     Methods,
@@ -66,12 +69,14 @@ export default {
     Watchers,
     Article,
     ProvideInject,
+    Event,
   },
   data() {
     return {
       name: "zayarwin",
       isNew: true,
       isMale: true,
+      open: false,
       num: "hello",
       display: false,
       show: true,
@@ -101,6 +106,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    closePopup(name) {
+      this.open = false;
+      console.log(name);
+    },
   },
   provide() {
     return {
