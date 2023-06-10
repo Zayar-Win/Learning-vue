@@ -51,7 +51,7 @@
   <!-- <button @click="open = true">Open Popup</button> -->
   <!-- <Input v-model="name" /> -->
   <!-- {{ name }} -->
-  <Card>
+  <!-- <Card>
     <template v-slot:header>
       <p>This is card Title</p>
     </template>
@@ -61,7 +61,12 @@
     <template v-slot:footer>
       <p>This is card Footer</p>
     </template>
-  </Card>
+  </Card> -->
+  <NameList>
+    <template #default="slotProps">
+      <h3>{{ slotProps.firstName }} {{ slotProps.lastName }}</h3>
+    </template>
+  </NameList>
 </template>
 
 <script>
@@ -75,12 +80,14 @@ import ProvideInject from "./components/ProvideInject.vue";
 import Event from "./components/Event.vue";
 import Input from "./components/Input.vue";
 import Card from "./components/Card.vue";
+import NameList from "./components/NameList.vue";
 export default {
   components: {
     Methods,
     EventHandling,
     FormHandling,
     ComputedProperty,
+    NameList,
     Card,
     Watchers,
     Article,
