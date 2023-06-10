@@ -49,8 +49,19 @@
   <!-- <ProvideInject /> -->
   <!-- <Event @close="closePopup" v-if="open" /> -->
   <!-- <button @click="open = true">Open Popup</button> -->
-  <Input v-model="name" />
-  {{ name }}
+  <!-- <Input v-model="name" /> -->
+  <!-- {{ name }} -->
+  <Card>
+    <template v-slot:header>
+      <p>This is card Title</p>
+    </template>
+    <template v-slot:default>
+      <p>This is card body</p>
+    </template>
+    <template v-slot:footer>
+      <p>This is card Footer</p>
+    </template>
+  </Card>
 </template>
 
 <script>
@@ -63,12 +74,14 @@ import Article from "./components/Article.vue";
 import ProvideInject from "./components/ProvideInject.vue";
 import Event from "./components/Event.vue";
 import Input from "./components/Input.vue";
+import Card from "./components/Card.vue";
 export default {
   components: {
     Methods,
     EventHandling,
     FormHandling,
     ComputedProperty,
+    Card,
     Watchers,
     Article,
     ProvideInject,
